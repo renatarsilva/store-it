@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const formSchema = z.object({
   fullName: z.string().min(2).max(50),
@@ -23,6 +24,7 @@ const formSchema = z.object({
 type FormType = "sign-in" | "sign-up";
 
 const AuthForm = ({ type }: { type: FormType }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,7 +63,28 @@ const AuthForm = ({ type }: { type: FormType }) => {
               )}
             />
           )}
-          <Button type="submit">Submit</Button>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <div className="shad-form-item">
+                  <FormLabel className="shad-form-label">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your email"
+                      className="shad-input"
+                      {...field}
+                    />
+                  </FormControl>
+                </div>
+                <FormMessage className="shad-form-message" />
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="form-submit-button">
+            {type === "sign-in" ? "Sign In" : "Sign Up"}
+          </Button>
         </form>
       </Form>
       {/* OTP Verification */}
