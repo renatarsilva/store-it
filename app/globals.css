@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities{
+  .center {
+    @apply flex h-screen items-center justify-center bg-amber-100
+  }
+}
+
 @layer base {
   * {
     @apply scroll-smooth;
