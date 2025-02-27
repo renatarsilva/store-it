@@ -18,16 +18,16 @@ import {
 import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  fullName: z.string().min(2).max(50),
 });
 
-type FormType = "sign-in | sign-up";
+type FormType = "sign-in" | "sign-up";
 
-const AuthForm = ({ type }: { FormType }) => {
+const AuthForm = ({ type }: { type: FormType }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      fullName: "",
     },
   });
 
@@ -44,17 +44,20 @@ const AuthForm = ({ type }: { FormType }) => {
           {type === "sign-up" && (
             <FormField
               control={form.control}
-              name="username"
+              name="fullName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <Input placeholder="shadcn" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is your public display name.
-                  </FormDescription>
-                  <FormMessage />
+                  <div className="shad-form-item">
+                    <FormLabel className="shad-form-label">Full Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter your full name"
+                        className="shad-input"
+                        {...field}
+                      />
+                    </FormControl>
+                  </div>
+                  <FormMessage className="shad-form-message" />
                 </FormItem>
               )}
             />
