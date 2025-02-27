@@ -7,7 +7,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
       <section className="bg-brand p-10">
         <div>
           <Image
-            src="/logo.png"
+            src="/assets/icons/logo-full.svg"
             alt="logo"
             width={224}
             height={82}
