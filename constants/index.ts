@@ -82,6 +82,6 @@ export const sortTypes = [
 ];
 
 export const avatarPlaceholderUrl =
-  "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
+  "https://img.freepik.com/vetores-premium/icone-de-perfil-de-avatar-em-estilo-plano-ilustracao-vetorial-de-perfil-de-usuario-feminino-em-fundo-isolado-conceito-de-negocio-de-sinalizacao-de-perfil-feminino_157943-38866.jpg?semt=ais_hybrid";
 
 export const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
