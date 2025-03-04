@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import React, { MouseEvent, useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Button } from "./button";
 import Image from "next/image";
-import { cn, getFileType } from "@/lib/utils";
+import { cn, convertFileToUrl, getFileType } from "@/lib/utils";
+import Thumbnail from "../Thumbnail";
 interface Props {
   onwerId: string;
   accountId: string;
@@ -17,7 +18,16 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     setFiles(acceptedFiles);
   }, []);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const handleRemoveFile = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+    fileName: string
+  ) => {
+    e.stopPropagation();
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  };
 
   return (
     <div {...getRootProps()} className="cursor-pointer">
@@ -43,8 +53,31 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
                 className="uploader-preview-item"
               >
                 <div className="flex items-center gap-3">
-                  <Thumbail />
+                  <Thumbnail
+                    type={type}
+                    extension={extension}
+                    url={convertFileToUrl(file)}
+                  />
+
+                  <div className="preview-item-name">
+                    {file.name}
+                    <Image
+                      src="/assets/icons/file-loader.gif"
+                      width={80}
+                      height={26}
+                      alt="Loader"
+                      unoptimized
+                    />
+                  </div>
                 </div>
+
+                <Image
+                  src="/assets/icons/remove.svg"
+                  width={24}
+                  height={24}
+                  alt="Remove"
+                  onClick={(e) => handleRemoveFile(e, file.name)}
+                />
               </li>
             );
           })}
