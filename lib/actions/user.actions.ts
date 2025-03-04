@@ -1,10 +1,9 @@
 "use server";
 
-import { Query, ID, Account } from "node-appwrite";
+import { Query, ID } from "node-appwrite";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { appwriteConfig } from "../appwrite/config";
-import { parseStringfy } from "../utils";
-import { string } from "zod";
+import { parseStringify } from "../utils";
 import { cookies } from "next/headers";
 import { avatarPlaceholderUrl } from "@/constants";
 import { redirect } from "next/navigation";
@@ -108,7 +107,7 @@ export const getCurrentUser = async () => {
 
   if (user.total <= 0) return null;
 
-  return parseStringfy(user.documents[0]);
+  return parseStringify(user.documents[0]);
 };
 
 export const signOutUser = async () => {
