@@ -66,7 +66,7 @@ export const createAccount = async ({
     );
   }
 
-  return parseStringfy({ accountId });
+  return parseStringify({ accountId });
 };
 
 export const verifySecret = async ({
@@ -88,7 +88,7 @@ export const verifySecret = async ({
       secure: true,
     });
 
-    return parseStringfy({ sessionId: session.$id });
+    return parseStringify({ sessionId: session.$id });
   } catch (error) {
     handleError(error, "Failed to verify OTP");
   }
@@ -130,10 +130,10 @@ export const signInUser = async ({ email }: { email: string }) => {
 
     if (existingUser) {
       await sendEmailOTP({ email });
-      return parseStringfy(existingUser.accountId);
+      return parseStringify(existingUser.accountId);
     }
 
-    return parseStringfy({ accountId: null, error: "User not found" });
+    return parseStringify({ accountId: null, error: "User not found" });
   } catch (error) {
     handleError(error, "Failed to sign in user");
   }
