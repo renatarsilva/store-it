@@ -130,7 +130,7 @@ export const signInUser = async ({ email }: { email: string }) => {
 
     if (existingUser) {
       await sendEmailOTP({ email });
-      return parseStringify(existingUser.accountId);
+      return parseStringify(existingUser);
     }
 
     return parseStringify({ accountId: null, error: "User not found" });
