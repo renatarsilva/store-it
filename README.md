@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Store-it
 
-## Getting Started
+Store-it é uma aplicação de armazenamento em nuvem semelhante ao Google Drive. Com ela, usuários podem armazenar, organizar e acessar documentos de forma segura e eficiente.
 
-First, run the development server:
+<img center="right" src="./public/assets/images/storeIt.png"  />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** - Framework React para aplicações web.
+- **TypeScript** - Superset do JavaScript que adiciona tipagem estática.
+- **Appwrite** - Backend para autenticação, banco de dados e armazenamento.
+- **Tailwind CSS** - Framework de estilização baseado em utilitários.
+- **React Hook Form** - Gerenciamento de formulários e validação.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Cadastro e Autenticação de Usuário**
+- **Upload e Download de Arquivos**
+- **Organização de Documentos**
+- **Interface Responsiva e Intuitiva**
 
-## Learn More
+## Instalação
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone o repositório:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/seu-usuario/store-it.git
+   cd store-it
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instale as dependências:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   # ou
+   bun install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Configure as variáveis de ambiente no arquivo `.env.local`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```env
+   NEXT_PUBLIC_APPWRITE_ENDPOINT=your-appwrite-endpoint
+   NEXT_PUBLIC_APPWRITE_PROJECT_ID=your-appwrite-project-id
+   NEXT_PUBLIC_APPWRITE_DATABASE_ID=your-database-id
+   NEXT_PUBLIC_APPWRITE_BUCKET_ID=your-bucket-id
+   ```
+
+4. Execute o projeto em ambiente de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   bun dev
+   ```
+
+## Uso
+
+- Acesse `http://localhost:3000`
+- Cadastre-se ou faça login na plataforma.
+- Comece a enviar e organizar seus arquivos na nuvem.
+
+## Deploy
+
+A aplicação está hospedada na Vercel. Acesse a versão online em:
+[Store-it](https://store-it-one-beta.vercel.app/sign-in)
+
+## Contribuição
+
+Se quiser contribuir para o projeto, siga os passos:
+
+1. Crie um fork do repositório.
+2. Crie uma branch para suas alterações: `git checkout -b minha-feature`
+3. Faça commit das alterações: `git commit -m "Adicionando nova funcionalidade"`
+4. Faça push para a branch: `git push origin minha-feature`
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está sob a licença MIT. Para mais informações, consulte o arquivo `LICENSE`.
