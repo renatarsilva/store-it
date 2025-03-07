@@ -7,7 +7,8 @@ import { Toaster } from "@/components/ui/sonner";
 
 import React from "react";
 
-const layout = async ({ children }: { children: React.ReactNode }) => {
+export const dynamic = "force-dynamic";
+const Layout = async ({ children }: { children: React.ReactNode }) => {
   let currentUser;
   try {
     currentUser = await getCurrentUser();
@@ -30,4 +31,4 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;

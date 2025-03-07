@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 import { Input } from "./ui/input";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { getFiles } from "@/lib/actions/file.actions";
 import { Models } from "node-appwrite";
 import Thumbnail from "./Thumbnail";
 import FormattedDateTime from "./FormattedDateTime";
-import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 
 const Search = () => {
@@ -35,6 +34,7 @@ const Search = () => {
     };
 
     fetchFiles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery]);
 
   useEffect(() => {
