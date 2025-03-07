@@ -1,6 +1,6 @@
 # Store-it
 
-Store-it é uma aplicação de armazenamento em nuvem semelhante ao Google Drive. Com ela, usuários podem armazenar, organizar e acessar documentos de forma segura e eficiente.
+Store-it é uma aplicação de armazenamento em nuvem semelhante ao Google Drive. Com ela, usuários podem armazenar, organizar e acessar documentos de forma segura e eficiente, usando Appwrite.
 
 <img center="right" src="./public/assets/images/storeIt.png"  />
 
