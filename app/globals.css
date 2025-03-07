@@ -4,7 +4,7 @@
 
 @layer utilities{
   .center {
-    @apply flex h-screen items-center justify-center bg-amber-100
+    @apply flex h-screen items-center justify-center
   }
 }
 
