@@ -1,78 +1,69 @@
 # Store-it
 
-Store-it é uma aplicação de armazenamento em nuvem semelhante ao Google Drive. Com ela, usuários podem armazenar, organizar e acessar documentos de forma segura e eficiente, usando Appwrite.
+Store-it is a cloud-based file storage application similar to Google Drive. It allows users to securely store, manage, and access their documents online.
 
-<img center="right" src="./public/assets/images/storeIt.png"  />
+## Features
 
-## Tecnologias Utilizadas
+- Secure file storage
+- User authentication (Sign In/Sign Up)
+- Intuitive user interface
+- File management system
+- Responsive design for mobile and desktop
 
-- **Next.js** - Framework React para aplicações web.
-- **TypeScript** - Superset do JavaScript que adiciona tipagem estática.
-- **Appwrite** - Backend para autenticação, banco de dados e armazenamento.
-- **Tailwind CSS** - Framework de estilização baseado em utilitários.
-- **React Hook Form** - Gerenciamento de formulários e validação.
+## Technologies Used
 
-## Funcionalidades
+- **Next.js** - React framework for server-side rendering
+- **Appwrite** - Backend-as-a-service for authentication and database
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **TypeScript** - Strongly typed JavaScript for better development experience
 
-- **Cadastro e Autenticação de Usuário**
-- **Upload e Download de Arquivos**
-- **Organização de Documentos**
-- **Interface Responsiva e Intuitiva**
+## Installation
 
-## Instalação
+To set up the project locally, follow these steps:
 
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/seu-usuario/store-it.git
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repository/store-it.git
+   ```
+2. Navigate to the project folder:
+   ```sh
    cd store-it
    ```
-
-2. Instale as dependências:
-
-   ```bash
-   npm install
-   # ou
-   bun install
+3. Install dependencies:
+   ```sh
+   npm install  # or yarn install / bun install
    ```
-
-3. Configure as variáveis de ambiente no arquivo `.env.local`:
-
+4. Create a `.env` file and add your Appwrite configurations:
    ```env
    NEXT_PUBLIC_APPWRITE_ENDPOINT=your-appwrite-endpoint
-   NEXT_PUBLIC_APPWRITE_PROJECT_ID=your-appwrite-project-id
+   NEXT_PUBLIC_APPWRITE_PROJECT_ID=your-project-id
    NEXT_PUBLIC_APPWRITE_DATABASE_ID=your-database-id
-   NEXT_PUBLIC_APPWRITE_BUCKET_ID=your-bucket-id
+   NEXT_PUBLIC_APPWRITE_USERS_COLLECTION_ID=your-users-collection-id
    ```
-
-4. Execute o projeto em ambiente de desenvolvimento:
-   ```bash
-   npm run dev
-   # ou
-   bun dev
+5. Run the development server:
+   ```sh
+   npm run dev  # or yarn dev / bun run dev
    ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Uso
+## Usage
 
-- Acesse `http://localhost:3000`
-- Cadastre-se ou faça login na plataforma.
-- Comece a enviar e organizar seus arquivos na nuvem.
+- **Sign Up / Sign In** - Create an account or log in to access your files.
+- **Upload Files** - Store your documents securely.
+- **Manage Files** - Organize and retrieve your stored files.
 
-## Deploy
+## Deployment
 
-A aplicação está hospedada na Vercel. Acesse a versão online em:
-[Store-it](https://store-it-one-beta.vercel.app/sign-in)
+This project can be deployed using platforms like Vercel, Netlify, or your preferred cloud provider.
 
-## Contribuição
+## Contribution
 
-Se quiser contribuir para o projeto, siga os passos:
+Feel free to contribute by submitting pull requests or opening issues.
 
-1. Crie um fork do repositório.
-2. Crie uma branch para suas alterações: `git checkout -b minha-feature`
-3. Faça commit das alterações: `git commit -m "Adicionando nova funcionalidade"`
-4. Faça push para a branch: `git push origin minha-feature`
-5. Abra um Pull Request.
+## License
 
-## Licença
+This project is licensed under the MIT License.
 
-Este projeto está sob a licença MIT. Para mais informações, consulte o arquivo `LICENSE`.
+---
+
+🚀 **Store-it** - Manage your files the best way!
