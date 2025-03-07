@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  webpack: (config) => {
+    config.optimization.minimize = false;
+    return config;
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: "100MB",

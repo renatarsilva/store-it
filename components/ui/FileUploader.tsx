@@ -1,6 +1,6 @@
 "use client";
 
-import React, { MouseEvent, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Button } from "./button";
 import Image from "next/image";
@@ -61,7 +61,7 @@ const FileUploader = ({ ownerId, accountId, className }: Props) => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const handleRemoveFile = (
-    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+    e: React.MouseEvent<HTMLImageElement>,
     fileName: string
   ) => {
     e.stopPropagation();
