@@ -25,7 +25,7 @@ const Sort = () => {
       <SelectContent className="sort-select-content">
         {sortTypes.map((sort) => (
           <SelectItem
-            key={sortTypes.label}
+            key={sort.label}
             className="shad-select-item"
             value={sort.value}
           >
