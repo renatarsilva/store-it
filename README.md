@@ -1,4 +1,4 @@
-# Store-it
+# Store It
 
 Store-it is a cloud-based file storage application similar to Google Drive. It allows users to securely store, manage, and access their documents online.
 <img center="right" src="./public/assets/images/storeIt.png"  />
